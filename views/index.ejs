@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Nova Database</title>
+</head>
+<body>
+
+
+    <header>
+        <h1>Nova Database</h1>
+        <form style="display: none;" id="new-fiber-form" action="">
+            <input id="new-fiber-input" type="text" placeholder="Add new fiber">
+            <!-- <input id="new-fiber-submit" type="submit" value="Add"> -->
+            <button id="new-fiber-submit" type="submit" >Add</button>
+        </form>
+    </header>
+
+
+    <main>
+        <div id="fiber-list" >
+            <div>
+                <h2>Fibers</h2>
+            </div>
+
+            <% for( var i=0 ; i<typeOfFiber.length ; i++ ) {%>
+
+            <div class="fiber-main-container" >
+                <div class="task">
+                    <div class="content">
+                        <h3 style="cursor: pointer;" class="fiber-heading" ><%= typeOfFiber[i].fiberType %></h3>
+                    </div>
+                    <div class="left-pannel-task" >
+                        <h3 style="display: inline-block;" ><%= typeOfFiber[i].count %></h3>
+                        <button id="" class="edit">Edit</button>
+                    </div>
+                </div>
+                <div id="" class="hidden lower" style="border-top: 1px solid #F8F6F4;" >
+                    <form id="list-des-form" class="task" action="/" method="post">
+                        <input class="content" placeholder="Add description" type="text" name="des" id="">
+                        <input type="number" name="count" placeholder="Number">
+                        <input class="hidden" type="text " value="<%= typeOfFiber[i].fiberType %>" name="typee" id="">
+                    </form>
+                </div>
+            </div>
+            <% } %>
+
+        </div>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+</html>
